@@ -1,5 +1,8 @@
 package sg.edu.nus.iss.cicddemo.controller;
 
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tools.jackson.databind.JsonNode;
@@ -8,9 +11,10 @@ import com.github.javafaker.Faker;
 
 @RestController
 public class DataController {
-    @GetMapping("/")
-    public String healthCheck() {
-        return "Secret Worship Website";
+
+    @GetMapping(value = "/", produces = MediaType.TEXT_HTML_VALUE)
+    public Resource healthCheck() {
+        return new ClassPathResource("static/index.html");
     }
 
     @GetMapping("/version")
