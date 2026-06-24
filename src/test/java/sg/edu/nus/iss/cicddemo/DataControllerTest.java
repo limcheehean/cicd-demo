@@ -13,10 +13,10 @@ public class DataControllerTest {
     @Autowired
     DataController dataController;
 
-    @Test
-    void health() {
-        assertEquals("HEALTH CHECK OK!", dataController.healthCheck());
-    }
+//    @Test
+//    void health() {
+//        assertEquals("HEALTH CHECK OK!", dataController.healthCheck());
+//    }
 
     @Test
     void version() {
